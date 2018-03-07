@@ -1,57 +1,4 @@
-# Sistema de Chamados - Support Ticket System
-## PT-BR:
-Este projeto foi criado em 2005 e adaptado ao longo dos anos com o objetivo de ser um sistema extremamente simples de registro de chamados para o setor de TI. Como o mesmo é simples de ser utilizado pelo usuário a adesão ao sistema é natural e fácil.
-
-### Requisitos
-Os requisitos necessários são:
-* Servidor web Apache ou Nginx
-* PHP 5 ou superior, com as extensões:
-	* php_mysql
-	* php_pdo_mysql
-	* php_ldap
-* Banco de dados MySQL
-* Active Directory
-* Servidor SMTP (já configurado no PHP.ini)
-* Flash Player instalado nas máquinas dos usuários
-
-### Instalação
-Para utilizá-lo em seu ambiente, siga os passos abaixo:
-
-1. Alterar as seguintes configurações no arquivo 'classes\util\Config.php':
-* getUrlBase: http://localhost/chamados (deve ser um nome de domínio completamente qualificado. Ex: http://chamados.dominio.com.br/)
-* getRemetenteEmail: Chamados <chamados@seu-dominio.com.br>
-* getDominioEmail: seu-dominio.com.br
-* getServidorAD: seu-servidor-de-active-directory.domain
-* getDominioAD: SEU-DOMINIO-AD
-
-2. Alterar os parametros de conexão no método 'construtor' do arquivo 'classes\conexao\ConexaoBDR.php'
-* $strHost = "localhost";
-* $strUser = "root";
-* $strPass = "";
-* $strBase = "chamados";
-
-3. Criar uma base de dados no MySQL importando as definições das tabelas do arquivo 'database\chamados.sql'
-
-4. Importar os dados dos setores/divisões da sua empresa na tabela 'setor'. O atributo 'status_setor' deve ser = 1 (ativo). Caso o setor não exista mais no futuro, você deve mudar para o valor = 2 (desativado).
-
-5. Alterar a logomarca do arquivo 'imagens/logo.png'. Considerar o uso de um arquivo em formato '.png' com transparência.
-
-6. Efetuar o primeiro login na aplicação utilizando o usuário e senha do Active Directory.
-
-7. Para os usuários administradores do sistema, alterar o campo 'flag_super_admin' in 'usuario' table para o valor = 1.
-
-8. Recomenda-se também alterar a variável $strHash do arquivo 'classes\util\Encripta.php' para alguns valores diferentes de criptografia, a fim de garantir a segurança no uso da ferramenta.
-
-### Primeiro Uso
-Para o primeiro uso, efetuar o login utilizando um usuário super admin ('flag_super_admin' = 1) e criar os grupos. Geralmente criamos o grupo chamado 'TI'. Este grupo deve receber chamados e possuir um e-mail para recebimento das movimentações. Este email geralmente refere-se a uma lista de pessoas.
-
-Após a criação do grupo, clicar no icone de pessoas e adicionar os logins dos usuários que fazem parte deste grupo. Apenas usuários que já fizeram o cadastro inicial no sistema serão exibidos nesta tela.
-
-Após adicionar os usuários, escolher dentre eles quais serão usuários administradores do grupo em questão.
-
-Para os usuários administradores, será apresentado no menu superior outras opções, tais como adicionar assuntos ao grupo. Estes assuntos geralmente são referenciados aos serviços de TI, tais como Email, Internet, Computador, etc. Nesse momento você pode especificar um prazo para atendimento, uma mensagem a ser exibida ao selecionar este assunto e um 'formato' sugestivo do chamado.
-
-Após esta configuração, o sistema já estará apto a funcionar corretamente.
+# Support Ticket System - Sistema de Chamados
 
 ## EN:
 This project was created in 2005 and adapted over the years with the target that to be an extremely simple support ticket system for the IT department. It is simple to be used by the end user and your adoption is natural and easy.
@@ -108,3 +55,57 @@ For admin users, other options such as adding subjects to the group will be disp
 After this configuration, the system will now be able to work properly.
 
 All files in this project are in Portuguese-BR.
+
+## PT-BR:
+Este projeto foi criado em 2005 e adaptado ao longo dos anos com o objetivo de ser um sistema extremamente simples de registro de chamados para o setor de TI. Como o mesmo é simples de ser utilizado pelo usuário a adesão ao sistema é natural e fácil.
+
+### Requisitos
+Os requisitos necessários são:
+* Servidor web Apache ou Nginx
+* PHP 5 ou superior, com as extensões:
+	* php_mysql
+	* php_pdo_mysql
+	* php_ldap
+* Banco de dados MySQL
+* Active Directory
+* Servidor SMTP (já configurado no PHP.ini)
+* Flash Player instalado nas máquinas dos usuários
+
+### Instalação
+Para utilizá-lo em seu ambiente, siga os passos abaixo:
+
+1. Alterar as seguintes configurações no arquivo 'classes\util\Config.php':
+* getUrlBase: http://localhost/chamados (deve ser um nome de domínio completamente qualificado. Ex: http://chamados.dominio.com.br/)
+* getRemetenteEmail: Chamados <chamados@seu-dominio.com.br>
+* getDominioEmail: seu-dominio.com.br
+* getServidorAD: seu-servidor-de-active-directory.domain
+* getDominioAD: SEU-DOMINIO-AD
+
+2. Alterar os parametros de conexão no método 'construtor' do arquivo 'classes\conexao\ConexaoBDR.php'
+* $strHost = "localhost";
+* $strUser = "root";
+* $strPass = "";
+* $strBase = "chamados";
+
+3. Criar uma base de dados no MySQL importando as definições das tabelas do arquivo 'database\chamados.sql'
+
+4. Importar os dados dos setores/divisões da sua empresa na tabela 'setor'. O atributo 'status_setor' deve ser = 1 (ativo). Caso o setor não exista mais no futuro, você deve mudar para o valor = 2 (desativado).
+
+5. Alterar a logomarca do arquivo 'imagens/logo.png'. Considerar o uso de um arquivo em formato '.png' com transparência.
+
+6. Efetuar o primeiro login na aplicação utilizando o usuário e senha do Active Directory.
+
+7. Para os usuários administradores do sistema, alterar o campo 'flag_super_admin' in 'usuario' table para o valor = 1.
+
+8. Recomenda-se também alterar a variável $strHash do arquivo 'classes\util\Encripta.php' para alguns valores diferentes de criptografia, a fim de garantir a segurança no uso da ferramenta.
+
+### Primeiro Uso
+Para o primeiro uso, efetuar o login utilizando um usuário super admin ('flag_super_admin' = 1) e criar os grupos. Geralmente criamos o grupo chamado 'TI'. Este grupo deve receber chamados e possuir um e-mail para recebimento das movimentações. Este email geralmente refere-se a uma lista de pessoas.
+
+Após a criação do grupo, clicar no icone de pessoas e adicionar os logins dos usuários que fazem parte deste grupo. Apenas usuários que já fizeram o cadastro inicial no sistema serão exibidos nesta tela.
+
+Após adicionar os usuários, escolher dentre eles quais serão usuários administradores do grupo em questão.
+
+Para os usuários administradores, será apresentado no menu superior outras opções, tais como adicionar assuntos ao grupo. Estes assuntos geralmente são referenciados aos serviços de TI, tais como Email, Internet, Computador, etc. Nesse momento você pode especificar um prazo para atendimento, uma mensagem a ser exibida ao selecionar este assunto e um 'formato' sugestivo do chamado.
+
+Após esta configuração, o sistema já estará apto a funcionar corretamente.
