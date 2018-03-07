@@ -1,0 +1,18 @@
+/**
+ * Impressao
+ */
+#topo,#rodape,#formFiltro,.titulo{
+	visibility:hidden; 
+	display:none;
+	margin:0px;
+	padding:0px;}
+#container,#corpo{
+	border:0px none;
+	margin:0px;
+	padding:0px;}
+.listaChamadoExtShow{
+	visibility:visible; 
+	display:inline;}
+.listaChamadoExtHide{
+	visibility:hidden; 
+	display:none;}

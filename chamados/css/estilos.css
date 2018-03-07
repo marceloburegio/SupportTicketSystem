@@ -1,0 +1,314 @@
+/**
+ * Geral
+ */
+ol,li,h1,h2,h3,h4,h5,h6,pre,form,html,body,blockquote,fieldset,select{
+	margin:0;
+	padding:0;}
+html,body{
+	height:100%;}
+body{
+	background-color:#FFF;
+	background-image:url(../imagens/bg_geral.jpg);
+	background-attachment:fixed;
+	background-repeat:repeat-x;
+	font-family:Verdana,Helvetica,sans-serif;
+	font-size:13px;}
+div.clear{
+	clear:both;
+	font-size:0;
+	height:0;
+	padding:0px;
+	margin:0px;}
+a{
+	font-weight:bold;
+	text-decoration:none;
+	color:#06C;}
+a:hover{
+	color:#00D;}
+div.mensagem{
+	text-align:center;}
+div.erro,span.erro{
+	color:#F00;
+	font-weight:bold;}
+div.sucesso{
+	color:#090;
+	font-weight:bold;}
+input.texto,input.numero{
+	border-radius:3px 3px 3px 3px;
+	border:1px solid #AAA;}
+input.botao{
+	border-top:1px solid #57BFEB;
+	border-bottom:1px solid #5886B6;
+	border-right:1px solid #55a4d5;
+	border-left:1px solid #55a4d5;
+	font-weight:bold;
+	color:#006;
+	padding:4px 20px 4px 20px;
+	*padding:4px 4px 4px 4px;
+	border-radius:8px 8px 8px 8px;
+	box-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
+	background:url(../imagens/btn_azul_novo.gif) 0px -4px repeat-x;}
+input.botaoAsFocused{
+	border:1px solid #444;
+	background:url(../imagens/btn_azul_novo.gif) 0px -2px repeat-x;}
+input.asfocused {
+	-webkit-box-shadow:0 0px 0 rgba(0,0,0,.0),inset 0 0px 0px rgba(0,0,0,0), 0 0 3px rgba(0,128,255,.7);
+	-moz-box-shadow:0 0px 0 rgba(0,0,0,.0),inset 0 0px 0px rgba(0,0,0,0), 0 0 3px rgba(0,128,255,.7);
+	box-shadow:0 0px 0 rgba(0,0,0,.0),inset 0 0px 0px rgba(0,0,0,0), 0 0 3px rgba(0,128,255,.7);}
+select,textarea{
+	border:1px solid #AAA;}
+input.erro,select.erro,textarea.erro{
+	border:1px dotted #F55;
+	background-color:#FFECE6;}
+p{
+	line-height:150%;
+	text-align:justify;}
+.escuro{
+	background-color:#F70;
+	border-bottom:1px solid #E50;
+	color:#FFF;
+	font-weight:bold;
+	padding-left:5px;
+	padding-right:5px;}
+.claro{
+	background-color:#E9E9E9;
+	border-bottom:1px solid #CCC;
+	color:#333;
+	padding-left:5px;
+	padding-right:5px;}
+#container{
+	width:980px;
+	margin:0 auto;
+	background-color:#FFF;
+	border-bottom:1px solid #C4C4C4;
+	border-left:1px solid #C4C4C4;
+	border-right:1px solid #C4C4C4;}
+#topo{
+	height:100px;
+	width:980px;
+	background:url(../imagens/bg_topo.jpg) -0px -15px no-repeat;}
+.ui-datepicker {
+	font-size:9pt !important}
+
+/**
+ * Menu
+ */
+#topo_logo{
+	float:left;
+	width:200px;
+	height:100px;
+	background:url(../imagens/logo.png) 0px 0px no-repeat;}
+#topo_menu{
+	color:#FFF;
+	float:right;
+	padding-right:10px;
+	padding-top:43px;}
+#topo_menu a{
+	color:#FFF;}
+#topo_menu a:hover{
+	color:#DDD;}
+#topo_saudacao{
+	float:right;
+	padding-top:20px;
+	padding-right:15px;
+	font-weight:bold;
+	font-size:12px;}
+.balao_info{
+	background:url(../imagens/seta_cima.gif) 0px 0px no-repeat;
+	background-position:top center;
+	position:absolute;
+	padding-top:7px;
+	color:#FFF;
+	top:16px;
+	z-index:100}
+.balao_info .balao_texto{
+	background-color:#2a2a2a;
+	padding:8px;}
+ul.menu_horizontal{
+	float:left;
+	margin:0;
+	padding:0;}
+ul.menu_horizontal li{
+	position:relative;
+	float:left;
+	list-style-type:none;
+	font-family:Verdana,Helvetica,sans-serif;
+	font-size:12px;
+	color:#FFF;
+	margin:0;
+	padding:0px 0px 0px 10px;}
+ul.menu_horizontal ul{
+	background-color:#F70;
+	position:absolute;
+	display:none;
+	margin:0;
+	padding:7px;
+	left:0px;
+	top:14px;
+	z-index:10}
+ul.menu_horizontal ul li{
+	line-height:170%;
+	margin:0;
+	padding:0px 0px 0px 3px;}
+
+
+/**
+ * Corpo
+ */
+#corpo{
+	border:1px solid #C4C4C4;
+	margin:20px;}
+.conteudo{
+	margin:10px;}
+#rodape{
+	background:url(../imagens/bg_barra.gif) top left repeat-x;
+	text-align:center;
+	padding:10px;}
+.titulo{
+	font-size:18px;
+	color:#333;
+	height:32px;
+	background:url(../imagens/bg_barra.gif) left -2px repeat-x;
+	border-bottom:2px solid #F70;
+	padding-top:10px;
+	padding-left:10px;}
+.informacoes{
+	padding-left:130px;
+	padding-right:130px;}
+.chm_item{
+	background-color:#FFF;
+	cursor:pointer;
+	height:40px;}
+.rel_item{
+	background-color:#FFF;
+	height:40px;}
+.chm_verde{
+	color:#080;}
+.chm_cinza{
+	color:#666;}
+.chm_laranja{
+	color:#F70;}
+.chm_vermelho{
+	color:#F00;}
+.chm_selecionado{
+	font-weight:bold;
+	background-color:#F0F0F0;}
+.chm_pendente{
+	background-color:#FFB;}
+.chm_hover{
+	background-color:#DFD;}
+#listaChamados{
+	padding-left:13px;
+	padding-right:13px;
+	padding-bottom:13px;}
+#detalhamentoChamado{
+	padding-top:13px;}
+#encaminhamentoChamado{
+	float:left;
+	padding-bottom:13px;
+	*padding-bottom:0px;}
+#detalhesChamado{
+	width:448px;
+	padding-right:13px;
+	float:left;}
+#historicoChamado{
+	width:448px;
+	float:right;}
+.box{
+	margin-bottom:15px;
+	border:1px solid #DDD;}
+.box_titulo{
+	padding:3px;}
+.box_conteudo{
+	padding:3px;
+	border-top:1px solid #DDD;}
+.box_linha{
+	color:#DDD;
+	background-color:#DDD;
+	/*background-color: #f00;*/
+	height:1px;}
+#reclassificarChamado .comboAssuntos{
+	width:310px;}
+#encaminharChamado .comboAssuntos{
+	width:310px;}
+#encaminharChamado .intIdUsuarioDestino{
+	width:310px;}
+input.loginOk{
+	font-weight:bold;color:green;}
+input.loginErro{
+	font-weight:bold;color:red;}
+#listagemUsuarios{
+	padding-bottom:13px;
+	padding-left:13px;
+	padding-right:13px;}
+.hst_normal{
+	background-color:#FFB;}
+.hst_leitura{
+	background-color:#DDD;}
+#flashNaoInstalado{
+	font-weight:bold;
+	color:red;}
+.listaChamadoExtShow{
+	visibility:hidden; 
+	display:none;}
+
+/**
+ * Paginação
+ */
+.paginacao{
+	font-weight:bold;
+	padding-right:5px;}
+.paginacao_primeira, .paginacao_anterior, .paginacao_proxima, .paginacao_ultima{
+	font-family:Arial,Helvetica,sans-serif;}
+.paginacao_atual{
+	color:#DA251C;}
+
+
+/**
+ * File Upload
+ */
+.uploadify{
+	float:left;}
+.uploadify-queue{
+	float:right;
+	width:260px;
+	margin-bottom:0px;}
+.uploadify-queue-item{
+	height:25px;
+	padding:5px;
+	margin-top:0px;}
+.uploadify-button{
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;}
+
+
+/**
+ * Carregando...
+ */
+div#loading{
+	padding:2px 8px 4px 8px;
+	background-color:#EE0;
+	position:fixed;
+	top:5px;
+	right:20px;
+	z-index:1000;}
+div#loading p{
+	font-family:Tahoma,Trebuchet MS,Arial,Verdana,Helvetica,sans-serif;
+	font-weight:bold;
+	font-size:13px;
+	color:#000;
+	margin:0;}
+* html div#loading{
+	position:absolute;
+	top:expression(document.compatMode == "CSS1Compat" ? document.documentElement.scrollTop + 5 + "px" : body.scrollTop + 5 + "px");}
+
+
+/**
+* Graficos
+*/
+.relatorioGrafico{
+	width:900px;
+	height:500px;
+	margin:0 auto;
+	border: 1px solid #EEE;}
