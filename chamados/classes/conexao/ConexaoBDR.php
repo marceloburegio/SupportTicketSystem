@@ -34,7 +34,7 @@ class ConexaoBDR {
 		$strType = "";
 		switch ($strDatabase) {
 			case "sistema" :
-				$strHost = "localhost";
+				$strHost = "127.0.0.1";
 				$strUser = "root";
 				$strPass = "";
 				$strBase = "chamados";

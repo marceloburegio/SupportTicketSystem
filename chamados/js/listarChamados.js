@@ -1,8 +1,5 @@
 $(document).ready(function(){
 	$(document).on("click", ".chm_item", function() {
-		// Destruindo o Uploadify (Resolve BUG no IE)
-		$("#strArquivoAnexo").uploadify("destroy");
-		
 		$("div#listaChamados").find(".chm_item").each(function(){
 			$(this).removeClass("chm_selecionado");
 		});
@@ -28,8 +25,6 @@ $(document).ready(function(){
 	
 	// Validacao do Formulario
 	$(document).on("submit", "form#formFiltro", function() {
-		// Destruindo o Uploadify (Resolve BUG no IE)
-		$("#strArquivoAnexo").uploadify("destroy");
 		var objForm = $(this);
 		
 		// Desativando o botao submit

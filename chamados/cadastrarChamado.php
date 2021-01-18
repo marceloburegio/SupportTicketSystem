@@ -85,7 +85,10 @@ foreach ($arrPrioridades as $intCodigoPrioridade => $strDescricaoPrioridade) {
 			<tr>
 				<td class="escuro">Arquivo Anexo<br/>(apenas um)</td>
 				<td class="claro" style="height:40px; width:375px;">
-					<input type="file" name="strArquivoAnexo" id="strArquivoAnexo"/>
+					<div class="uploadifive">
+						<div class="uploadifive-queue" id="strArquivoAnexo-queue"></div>
+						<input type="file" name="strArquivoAnexo" id="strArquivoAnexo"/>
+					</div>
 					<div class="clear"></div>
 					<input type="hidden" id="strNomeArquivoAnexo" name="strNomeArquivoAnexo">
 					<input type="hidden" id="strCaminhoArquivoAnexo" name="strCaminhoArquivoAnexo">

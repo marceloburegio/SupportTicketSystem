@@ -17,8 +17,6 @@ include("includes/incTopo.php");
 		<p class="informacoes">Bem vindo ao sistema de controle de chamados.<br/>
 		Para prosseguirmos com o seu chamado, favor efetuar o login no sistema utilizando o seu <strong>usu&aacute;rio e senha da rede.</strong><br/>
 		</p>
-		<p class="informacoes" id="flashNaoInstalado" style="display:none;">Detectamos que voc&ecirc; n&atilde;o possui o Flash Player instalado em seu computador.<br/>
-			Por favor entre em contato com a TI e solicite a instala&ccedil;&atilde;o do <a href="https://get.adobe.com/br/flashplayer/" target="_blank">Flash Player</a>.</p>
 <!--
 			<p class="informacoes" style="color:red;"><strong>Caso tenha d&uacute;vidas, favor consultar este <a href="manual_de_abertura_de_chamados.pdf" target="_blank">Manual de abertura de Chamados</a>.</strong></p>
 -->
@@ -41,11 +39,6 @@ include("includes/incTopo.php");
 	</div>
 </div>
 <div class="clear"></div>
-<script type="text/javascript">
-$(document).ready(function(){
-	if (!isFlashInstalled()) $("#flashNaoInstalado").show();
-});
-</script>
 <?php
 // Include do rodapé
 include("includes/incRodape.php");

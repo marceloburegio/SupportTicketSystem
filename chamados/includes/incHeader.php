@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/jquery-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/jquery-ui.structure.min.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/jquery-ui.theme.min.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/uploadify-3.2.1.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/uploadifive.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/estilos.css?v=<?php echo filemtime("css/estilos.css"); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo Config::getUrlBase(); ?>/css/estilos-print.css?v=<?php echo filemtime("css/estilos-print.css"); ?>" media="print" />
 
@@ -16,7 +16,7 @@
 <script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery.ui.datepicker-pt-BR.js"></script>
-<script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery.uploadify.min-3.2.1.js"></script>
+<script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery.uploadifive.js"></script>
 <script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/jquery.scrollTo-2.1.2.min.js"></script>
 <script type="text/javascript" src="<?php echo Config::getUrlBase(); ?>/js/comum.js?v=<?php echo filemtime("js/comum.js"); ?>"></script>
 </head>

@@ -31,19 +31,21 @@ $(document).ready(function(){
 	// Carregando os assuntos padroes
 	$("#assuntos").load("xt_mostrarComboAssuntoPorGrupo.php");
 	
-	setTimeout(function(){$('#strArquivoAnexo').uploadify({
-		'swf'			: 'imagens/uploadify.swf',
-		'uploader'		: 'xt_enviarArquivo.php',
+	setTimeout(function(){$('#strArquivoAnexo').uploadifive({
+		'uploadScript'		: 'xt_enviarArquivo.php',
 		'buttonText'	: 'Enviar Arquivo',
-		'removeTimeout' : 0,
 		'width'			: 110,
 		'auto'			: true,
-		'onSelect'		: function(file) {
+		'multi'	: false,
+		'queueID'		: 'strArquivoAnexo-queue',
+		'onAddQueueItem' : function(file) {
 			processaInicioUpload();
 		},
-		'onUploadSuccess'	: function(file, data, response) {
-			var retorno = $.parseJSON(data);
-			processaFimUpload(retorno);
+		'onUploadComplete'	: function(file, data) {
+			processaFimUpload(file, data);
+		},
+		'onCancel'		: function(file) {
+			apagarArquivo();
 		}
 	})},0);
 	

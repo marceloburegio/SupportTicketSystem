@@ -218,33 +218,6 @@ function exibirMensagem(obj, resposta, mensagem) {
 	mensagem = "<div class=\""+ classe +"\">"+ mensagem +"</div>";
 	$(obj).html(mensagem);
 }
-/*
-function isFlashInstalled() {
-	try {
-		var objSf = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-		if (objSf) return true;
-	} catch (e) {
-		if (navigator.mimeTypes && navigator.mimeTypes['application/x-shockwave-flash'] != undefined && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) return true;
-	}
-	return false;
-}
-*/
-function isFlashInstalled() {
-	if (navigator.mimeTypes && navigator.mimeTypes.length > 0) {
-		var objMime = navigator.mimeTypes['application/x-shockwave-flash'];
-		if (objMime && objMime.enabledPlugin) return true;
-	}
-	else {
-		if (typeof (ActiveXObject) != "undefined") {
-			try {
-				var objSf = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.1");
-				return true;
-			} catch (e) {
-			}
-		}
-	}
-	return false;
-}
 /* Formata um numero float no estilo */
 function numberFormat(floNum) {
 	return RComma(floNum.toFixed(2).toString().replace('.',','));
@@ -257,27 +230,29 @@ function RComma(S) {
 /* ***********************
  *   FUNCOES DE UPLOAD 
  * ***********************/
-function processaFimUpload(res) {
+function processaFimUpload(file, data) {
+	var res = $.parseJSON(data);
 	if (!res.resposta) alert(res.mensagem);
 	else {
 		// Atribuindo os nome e o caminho do arquivo aos inputs hidden
 		$("#strNomeArquivoAnexo").attr("value", res.strNomeArquivo);
 		$("#strCaminhoArquivoAnexo").attr("value", res.strCaminhoArquivo);
 		
-		// Mostrando a div que ficara exibindo o nome do arquivo
-		$("#strArquivoAnexo-queue").html('<div class="uploadify-queue-item"><div class="cancel"><a onclick="apagarArquivo()" href="javascript:;">X</a></div><span class="fileName">'+ res.strNomeArquivo +' ('+ formataTamanhoArquivo(res.intTamanhoArquivo) +')</span></div>').show();
+		// Atualizando a div que exibirá o tamanho do arquivo
+		file.queueItem.find('.fileinfo').html(' ('+ formataTamanhoArquivo(res.intTamanhoArquivo) +')');
 	}
 }
 function processaInicioUpload() {
-	// Se o usuario ja tinha feito um upload anterior, apagar o arquivo do diretorio antes de fazer um novo upload
-	apagarArquivo();
+	// Se o usuario ja tinha feito um upload anterior, apagar o arquivo anterior antes de realizar o novo upload
+	if ($("#strArquivoAnexo-queue").children().length > 1) {
+		$("#strArquivoAnexo-queue").children().first().find(".close").click();
+	}
 }
 /**
  * Metodo que ira apagar o arquivo em anexo
  * @return void
  */
 function apagarArquivo() {
-	$("#strArquivoAnexo-queue").html("").show();
 	if ($("#strCaminhoArquivoAnexo").val() != "") {
 		$.post("xt_apagarArquivo.php", {"strCaminhoArquivoAnexo" : $("#strCaminhoArquivoAnexo").val()});
 	}

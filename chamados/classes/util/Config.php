@@ -22,7 +22,7 @@ final class Config {
 	 * @return string
 	 */
 	public static function getUrlBase() {
-		return "http://localhost/chamados";
+		return "http://localhost/SupportTicketSystem/chamados";
 	}
 	
 	/**

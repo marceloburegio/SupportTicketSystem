@@ -267,21 +267,23 @@ input.loginErro{
 /**
  * File Upload
  */
-.uploadify{
+/*
+.uploadifive{
 	float:left;}
-.uploadify-queue{
+.uploadifive-queue{
 	float:right;
-	width:260px;
-	margin-bottom:0px;}
-.uploadify-queue-item{
+	width:255px;
+	margin-bottom:0px;
+	padding-left:5px;}
+.uploadifive-queue-item{
 	height:25px;
 	padding:5px;
 	margin-top:0px;}
-.uploadify-button{
+*/
+.uploadifive-button{
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
 	border-radius:8px;}
-
 
 /**
  * Carregando...

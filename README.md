@@ -13,7 +13,6 @@ The requirements are:
 * Database MySQL
 * Active Directory
 * SMTP Server (already defined in PHP.ini)
-* Flash Player installed in the end user's computers
 
 ### Setup
 To use it in your environment, follow the steps below:
@@ -69,7 +68,6 @@ Os requisitos necessários são:
 * Banco de dados MySQL
 * Active Directory
 * Servidor SMTP (já configurado no PHP.ini)
-* Flash Player instalado nas máquinas dos usuários
 
 ### Instalação
 Para utilizá-lo em seu ambiente, siga os passos abaixo:

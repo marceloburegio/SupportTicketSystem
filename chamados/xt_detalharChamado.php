@@ -145,7 +145,10 @@ if ($bolEnviado || ($bolRecebido && $objChamado->getIdUsuarioOrigem() != $intIdU
 ?>
 			
 			<div style="padding-top:10px">
-				<input type="file" name="strArquivoAnexo" id="strArquivoAnexo"/>
+				<div class="uploadifive">
+					<div class="uploadifive-queue" id="strArquivoAnexo-queue"></div>
+					<input type="file" name="strArquivoAnexo" id="strArquivoAnexo"/>
+				</div>
 				<div class="clear"></div>
 				<input type="hidden" id="strNomeArquivoAnexo" name="strNomeArquivoAnexo">
 				<input type="hidden" id="strCaminhoArquivoAnexo" name="strCaminhoArquivoAnexo">
@@ -346,19 +349,21 @@ foreach ($arrObjHistorico as $objHistorico) {
 <script type="text/javascript">
 jQuery("#encaminharChamado_assuntos").load("xt_mostrarComboAssuntoPorGrupo.php");
 jQuery("#reclassificarChamado_assuntos").load("xt_mostrarComboAssuntoPorGrupo.php", {"intIdGrupo" : <?php echo $objChamado->getIdGrupoDestino();?>, "intIdAssunto" : <?php echo $objChamado->getIdAssunto();?>});
-setTimeout(function(){jQuery('#strArquivoAnexo').uploadify({
-	'swf'			: 'imagens/uploadify.swf',
-	'uploader'		: 'xt_enviarArquivo.php',
+setTimeout(function(){$('#strArquivoAnexo').uploadifive({
+	'uploadScript'		: 'xt_enviarArquivo.php',
 	'buttonText'	: 'Enviar Arquivo',
-	'removeTimeout' : 0,
 	'width'			: 110,
 	'auto'			: true,
-	'onSelect'		: function(file) {
+	'multi'	: false,
+	'queueID'		: 'strArquivoAnexo-queue',
+	'onAddQueueItem' : function(file) {
 		processaInicioUpload();
 	},
-	'onUploadSuccess'	: function(file, data, response) {
-		var retorno = jQuery.parseJSON(data);
-		processaFimUpload(retorno);
+	'onUploadComplete'	: function(file, data) {
+		processaFimUpload(file, data);
+	},
+	'onCancel'		: function(file) {
+		apagarArquivo();
 	}
 })},0);
 </script>
